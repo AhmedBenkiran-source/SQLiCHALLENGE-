@@ -1,0 +1,20 @@
+package sqli.challenge.service;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+
+import sqli.challenge.model.Note;
+
+public interface NoteService {
+
+	public Page<Note> getAllNotePagination(PageRequest pageRequest);
+	public List<Note> getAllNote();
+	public Note createOrUpdateNote(String acti, String sej, String description) throws JsonParseException, JsonMappingException, IOException  ;
+
+}
